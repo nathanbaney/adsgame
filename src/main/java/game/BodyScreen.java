@@ -1,45 +1,19 @@
 package game;
 
-import game.Driver;
-import game.GameWrangler;
-import game.ScreenDrawer;
-import org.hexworks.zircon.api.Components;
-import org.hexworks.zircon.api.Sizes;
-import org.hexworks.zircon.api.UIEventResponses;
-import org.hexworks.zircon.api.builder.component.TextBoxBuilder;
-import org.hexworks.zircon.api.component.*;
-import org.hexworks.zircon.api.graphics.BoxType;
-import org.hexworks.zircon.api.graphics.Layer;
-import org.hexworks.zircon.api.screen.Screen;
-import org.hexworks.zircon.api.uievent.KeyboardEventType;
-
 import java.util.HashSet;
 import java.util.Set;
 
-public class BodyScreenDrawer extends ScreenDrawer {
-    private Set<Component> components;
-    Header header;
-    Header headHeader;
-    Header torsoHeader;
-    Header legHeader;
-    TextBox headParts;
-    TextBox torsoParts;
-    TextBox legParts;
+public class BodyScreen extends Screen {
 
-    public BodyScreenDrawer(Screen screen, GameWrangler wrangler) {
-        super(screen, wrangler);
-        components = new HashSet<>();
-        addComponents();
-        screen.onKeyboardEvent(KeyboardEventType.KEY_PRESSED, ((event, phase) -> {
-            wrangler.setCurrentScreen(wrangler.playScreen);
-            return UIEventResponses.processed();
-        }));
+
+    public BodyScreen(GameWrangler wrangler) {
+        super(wrangler);
     }
     @Override
-    public void draw(Screen screen){
+    public void draw(){
         System.out.println("drawing");
     }
-    private void addComponents() {
+    /*private void addComponents() {
         TextBoxBuilder bldr = new TextBoxBuilder();
 
         header = Components.header()
@@ -117,4 +91,5 @@ public class BodyScreenDrawer extends ScreenDrawer {
         screen.addComponent(legParts);
         components.add(legParts);
     }
+    */
 }

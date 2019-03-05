@@ -1,22 +1,18 @@
 package game;
 
+import asciiPanel.AsciiPanel;
 import game.parts.PartDoubleJointedLegs;
 import game.parts.PartHorn;
 import game.parts.PartScales;
 import game.parts.PartSpines;
-import org.hexworks.zircon.api.Screens;
-import org.hexworks.zircon.api.Tiles;
-import org.hexworks.zircon.api.builder.data.TileBuilder;
-import org.hexworks.zircon.api.grid.TileGrid;
-import org.hexworks.zircon.api.screen.Screen;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 public class GameWrangler {
-    private final TileGrid tileGrid;
+    public final AsciiPanel tileGrid;
 
-    public Map<Screen, ScreenDrawer> screens;
+    public Set<Screen> screens;
     public Screen currentScreen;
     public Screen mainMenuScreen;
     public Screen playScreen;
@@ -24,30 +20,26 @@ public class GameWrangler {
 
     public static Entity player;
 
-    public GameWrangler(TileGrid tileGrid){
+    public GameWrangler(AsciiPanel tileGrid){
         this.tileGrid = tileGrid;
 
-        player = new Entity("player",
-                Tiles.newBuilder()
-                        .withCharacter('@')
-                        .buildCharacterTile(), 3,20);
+        player = new Entity("player", new Tile('@'), 4, 4);
         player.addPart(new PartDoubleJointedLegs(player));
         player.addPart(new PartHorn(player));
         player.addPart(new PartScales(player));
         player.addPart(new PartSpines(player));
 
-        screens = new HashMap<>();
-        mainMenuScreen = Screens.createScreenFor(tileGrid);
-        playScreen = Screens.createScreenFor(tileGrid);
-        bodyScreen = Screens.createScreenFor(tileGrid);
-        screens.put(mainMenuScreen, new MainMenuScreenDrawer(mainMenuScreen, this));
-        screens.put(playScreen, new PlayScreenDrawer(playScreen, this));
-        screens.put(bodyScreen, new BodyScreenDrawer(bodyScreen, this));
+        screens = new HashSet<>();
+        mainMenuScreen = new MainMenuScreen(this);
+        playScreen = new PlayScreen(this);
+        bodyScreen = new BodyScreen(this);
+        screens.add(mainMenuScreen);
+        screens.add(playScreen);
+        screens.add(bodyScreen);
 
         /////
 
         setCurrentScreen(playScreen);
-
     }
 
     public Screen getCurrentScreen(){
@@ -55,8 +47,9 @@ public class GameWrangler {
     }
     public void setCurrentScreen(Screen screen){
         currentScreen = screen;
-        currentScreen.display();
-        screens.get(screen).draw(screen);
+        Driver.mainFrame.addKeyListener(screen);
+        System.out.println("registered");
+        currentScreen.draw();
     }
 
 

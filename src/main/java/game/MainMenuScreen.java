@@ -1,30 +1,30 @@
 package game;
 
-import org.hexworks.zircon.api.Components;
-import org.hexworks.zircon.api.UIEventResponses;
-import org.hexworks.zircon.api.component.Button;
-import org.hexworks.zircon.api.component.Component;
-import org.hexworks.zircon.api.component.Header;
-import org.hexworks.zircon.api.screen.Screen;
-import org.hexworks.zircon.api.uievent.MouseEventType;
-import org.hexworks.zircon.api.uievent.UIEventResponse;
-
+import java.awt.event.KeyEvent;
 import java.util.HashSet;
 import java.util.Set;
 
-public class MainMenuScreenDrawer extends ScreenDrawer {
-    private Set<Component> components;
+public class MainMenuScreen extends Screen {
+    //private Set<Component> components;
 
-    public MainMenuScreenDrawer(Screen screen, GameWrangler wrangler){
-        super(screen, wrangler);
-        components = new HashSet<>();
-        addComponents();
+    public MainMenuScreen(GameWrangler wrangler){
+        super(wrangler);
+        //components = new HashSet<>();
+        //addComponents();
     }
 
     @Override
-    public void draw(Screen screen){
+    public void draw(){
     }
+    @Override
+    public void keyPressed(KeyEvent e) { }
 
+    @Override
+    public void keyReleased(KeyEvent e) { }
+
+    @Override
+    public void keyTyped(KeyEvent e) { }
+/*
     private void addComponents(){
         Header header = Components.header()
                 .withPosition(1,4)
@@ -48,5 +48,5 @@ public class MainMenuScreenDrawer extends ScreenDrawer {
             wrangler.setCurrentScreen(wrangler.playScreen);
             return UIEventResponses.processed();
         }));
-    }
+    }*/
 }

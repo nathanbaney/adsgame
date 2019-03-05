@@ -1,19 +1,16 @@
 package game;
 
 import game.parts.Part;
-import game.parts.PartType;
-import org.hexworks.zircon.api.Positions;
-import org.hexworks.zircon.api.color.TileColor;
-import org.hexworks.zircon.api.data.Position;
-import org.hexworks.zircon.api.data.Tile;
 
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 
 public class Entity{
     public final String name;
     public Tile tile;
 
-    public Position position;
+    public Point position;
     public int xPos;
     public int yPos;
 
@@ -35,7 +32,7 @@ public class Entity{
         this.tile = tile;
         xPos = x;
         yPos = y;
-        position = Positions.create(xPos,yPos);
+        position = new Point(x, y);
 
         speed = 1;
         health = 10;

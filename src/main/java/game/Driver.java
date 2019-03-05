@@ -1,23 +1,26 @@
 package game;
 
-import org.hexworks.zircon.api.*;
+import asciiPanel.AsciiFont;
+import asciiPanel.AsciiPanel;
 
-import org.hexworks.zircon.api.grid.TileGrid;
+import javax.swing.*;
 
 public class Driver {
     public static int GRID_HEIGHT = 30;
     public static int GRID_WIDTH = 40;
 
     public static GameWrangler wrangler;
+    public static JFrame mainFrame;
 
     public static void main(String args[]){
-        TileGrid tileGrid = SwingApplications.startTileGrid(
-                AppConfigs.newConfig()
-                        .withSize(Sizes.create(GRID_WIDTH, GRID_HEIGHT))
-                        .withDefaultTileset(CP437TilesetResources.cooz16x16())
-                        .build());
+        mainFrame = new JFrame();
+        AsciiPanel tileGrid = new AsciiPanel(40, 30, AsciiFont.TALRYTH_15_15);
+        mainFrame.add(tileGrid);
 
-        GameWrangler wrangler = new GameWrangler(tileGrid);
-        wrangler.getCurrentScreen().display();
+        mainFrame.setSize(GRID_WIDTH * 15, GRID_HEIGHT * 15);
+        mainFrame.setVisible(true);
+
+        wrangler = new GameWrangler(tileGrid);
+
     }
 }

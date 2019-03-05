@@ -1,7 +1,7 @@
 package game.actions;
 
 import game.Entity;
-import org.hexworks.zircon.api.screen.Screen;
+import game.Screen;
 
 public class ActionExit extends Action {
     @Override

@@ -1,15 +1,15 @@
 package game.actions;
 
-import org.hexworks.zircon.api.Positions;
-import org.hexworks.zircon.api.data.Position;
-import org.hexworks.zircon.api.screen.Screen;
 import game.Entity;
+import game.Screen;
+
+import java.awt.*;
 
 public class ActionMoveN extends Action {
 
     @Override
     public void execute(Screen screen, Entity ent){
         ent.yPos--;
-        ent.position = Positions.create(ent.xPos, ent.yPos);
+        ent.position = new Point(ent.xPos, ent.yPos);
     }
 }
