@@ -5,7 +5,7 @@ import game.Entity;
 public class PartDoubleJointedLegs extends Part{
     public PartDoubleJointedLegs(Entity holder){
         super(holder);
-        name = "double-jointed legs";
+        name = "double-joints";
         health = 5;
         attack = 2;
         armor = 0;

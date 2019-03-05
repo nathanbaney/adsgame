@@ -1,7 +1,7 @@
 package game.actions;
 
 import game.Entity;
-import game.Screen;
+import game.screens.Screen;
 
 public class ActionExit extends Action {
     @Override

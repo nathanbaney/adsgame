@@ -1,4 +1,6 @@
-package game;
+package game.screens;
+
+import game.GameWrangler;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;

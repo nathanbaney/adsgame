@@ -1,7 +1,7 @@
 package game.actions;
 
 import game.Entity;
-import game.Screen;
+import game.screens.Screen;
 
 import java.awt.*;
 
@@ -12,5 +12,6 @@ public class ActionMoveNE extends Action {
         ent.xPos++;
         ent.yPos--;
         ent.position = new Point(ent.xPos, ent.yPos);
+        screen.draw();
     }
 }

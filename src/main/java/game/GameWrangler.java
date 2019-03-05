@@ -5,6 +5,10 @@ import game.parts.PartDoubleJointedLegs;
 import game.parts.PartHorn;
 import game.parts.PartScales;
 import game.parts.PartSpines;
+import game.screens.BodyScreen;
+import game.screens.MainMenuScreen;
+import game.screens.PlayScreen;
+import game.screens.Screen;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,11 +18,11 @@ public class GameWrangler {
 
     public Set<Screen> screens;
     public Screen currentScreen;
-    public Screen mainMenuScreen;
-    public Screen playScreen;
-    public Screen bodyScreen;
+    public MainMenuScreen mainMenuScreen;
+    public PlayScreen playScreen;
+    public BodyScreen bodyScreen;
 
-    public static Entity player;
+    public Entity player;
 
     public GameWrangler(AsciiPanel tileGrid){
         this.tileGrid = tileGrid;
@@ -48,7 +52,6 @@ public class GameWrangler {
     public void setCurrentScreen(Screen screen){
         currentScreen = screen;
         Driver.mainFrame.addKeyListener(screen);
-        System.out.println("registered");
         currentScreen.draw();
     }
 

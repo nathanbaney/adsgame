@@ -1,5 +1,8 @@
-package game;
+package game.screens;
 
+import game.Driver;
+import game.GameWrangler;
+import game.Tile;
 import game.actions.*;
 
 import java.awt.event.KeyEvent;
@@ -33,7 +36,6 @@ public class PlayScreen extends Screen {
         if (actionMap.containsKey(e.getKeyCode())){
             actionMap.get(e.getKeyCode()).execute(this, Driver.wrangler.player);
         }
-        draw();
     }
 
     private void addCommonTiles(){
@@ -51,5 +53,6 @@ public class PlayScreen extends Screen {
         actionMap.put(KeyEvent.VK_NUMPAD4, new ActionMoveW());
         actionMap.put(KeyEvent.VK_NUMPAD7, new ActionMoveNW());
         actionMap.put(KeyEvent.VK_ESCAPE, new ActionExit());
+        actionMap.put(KeyEvent.VK_I, new ActionGetBodyScreen());
     }
 }
