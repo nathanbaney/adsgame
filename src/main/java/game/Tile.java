@@ -1,5 +1,7 @@
 package game;
 
+import asciiPanel.AsciiPanel;
+
 import java.awt.Color;
 
 public class Tile {
@@ -10,15 +12,21 @@ public class Tile {
     public Color foregroundColor;
     public Color backgroundColor;
 
-    public Tile(char glyph, Color frgrnd, Color bckgrnd){
+    public boolean walkable;
+
+    public Tile(char glyph, Color frgrnd, Color bckgrnd, boolean walkable){
         this.glyph = glyph;
         this.foregroundColor = frgrnd;
         this.backgroundColor = bckgrnd;
+        this.walkable = walkable;
     }
     public Tile (char glyph){
-        this(glyph, DEFAULT_FOREGROUND, DEFAULT_BACKGROUND);
+        this(glyph, DEFAULT_FOREGROUND, DEFAULT_BACKGROUND, true);
     }
     public Tile(){
         this('.');
+    }
+    public void draw(AsciiPanel tileGrid, int x, int y){
+        tileGrid.write(glyph, x, y, foregroundColor, backgroundColor);
     }
 }

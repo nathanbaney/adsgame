@@ -1,13 +1,15 @@
 package game;
 
+import asciiPanel.AsciiPanel;
 import game.parts.Part;
+import game.util.Line;
 
 import java.awt.*;
 import java.util.*;
 import java.util.List;
 
 public class Entity{
-    public final String name;
+    public String name;
     public Tile tile;
 
     public Point position;
@@ -27,6 +29,8 @@ public class Entity{
     public int torsoSlots;
     public int legSlots;
 
+    public int distanceFromPlayer;
+
     public Entity(String name, Tile tile, int x, int y){
         this.name = name;
         this.tile = tile;
@@ -45,6 +49,19 @@ public class Entity{
         headSlots = 2;
         torsoSlots = 2;
         legSlots = 2;
+
+        distanceFromPlayer = 128; //arbitrarily high
+    }
+    public Entity(){
+        this("null", null, 0, 0);
+    }
+
+    public void draw(AsciiPanel tileGrid){
+        tileGrid.write(tile.glyph, xPos, yPos, tile.foregroundColor, tile.backgroundColor);
+    }
+
+    public void highlight(AsciiPanel tileGrid, Color color){
+        tileGrid.write(tile.glyph, xPos, yPos, tile.foregroundColor, color);
     }
 
     public boolean addPart(Part part){
@@ -96,6 +113,16 @@ public class Entity{
             }
         }
         return removed;
+    }
+
+    public void setPosition(Point point){
+        position = point;
+        xPos = point.x;
+        yPos = point.y;
+    }
+
+    public void setDistanceFromPlayer(int distance){
+        distanceFromPlayer = distance;
     }
 
     public String getPartsAsString(){
