@@ -17,8 +17,6 @@ public class PlayScreen extends Screen {
     public List<Entity> entities;
     public Set<Entity> highlightedEntities;
 
-    private List<Point> lineTest;
-
     public Entity focusedEntity;
     public boolean lookMode;
     public int focusedEntityIndex;
@@ -31,7 +29,6 @@ public class PlayScreen extends Screen {
         actionMapLM = new HashMap<>();
         entities = new ArrayList<>();
         highlightedEntities = new HashSet<>();
-        lineTest = Line.getLine(wrangler.player.position, new Point(20,20));
 
         focusedEntity = wrangler.player;
         lookMode = false;
@@ -45,13 +42,9 @@ public class PlayScreen extends Screen {
     @Override
     public void draw(){
         wrangler.tileGrid.clear();
-        lineTest = Line.getLine(wrangler.player.position, new Point(20,20));
 
-        drawGrid(wrangler.grid);
+        drawGrid(wrangler.currentMapGrid);
 
-        for (Point point : lineTest){
-            wrangler.tileGrid.write('X', point.x, point.y);
-        }
         if (lookMode){
             wrangler.tileGrid.write("LOOK MODE", 0, 0);
         }

@@ -4,14 +4,32 @@
     <list default="true" id="9ac86767-1c62-43ec-9e9c-8f91519533d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/GameWrangler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/GameWrangler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveNE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveNE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveNW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveNW.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveSE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveSE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveSW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveSW.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveW.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/grids/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/grids/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/grids/test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/grids/test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/screens/PlayScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/screens/PlayScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Entity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Entity$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/screens/MainMenuScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/screens/MainMenuScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/util/MapLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/util/MapFuncs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/GameWrangler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/GameWrangler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/actions/ActionMoveE.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/actions/ActionMoveE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/actions/ActionMoveN.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/actions/ActionMoveN.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/actions/ActionMoveNE.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/actions/ActionMoveNE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/actions/ActionMoveNW.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/actions/ActionMoveNW.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/actions/ActionMoveS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/actions/ActionMoveS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/actions/ActionMoveSE.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/actions/ActionMoveSE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/actions/ActionMoveSW.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/actions/ActionMoveSW.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/actions/ActionMoveW.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/actions/ActionMoveW.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/grids/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/grids/Grid.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/game/screens/PlayScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/screens/PlayScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/game/util/MapLoader.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,32 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/game/GameWrangler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="39" column="47" lean-forward="true" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/screens/PlayScreen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="75" selection-start-line="75" selection-end-line="75" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/grids/Grid.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="263">
+              <caret line="36" column="69" lean-forward="true" selection-start-line="36" selection-start-column="69" selection-end-line="36" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -60,22 +54,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/util/MapLoader.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionMoveW.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="72" column="1" lean-forward="true" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
+            <state relative-caret-position="264">
+              <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/grids/test.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -83,29 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/game/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/github/trystan/AsciiPanel/ac179b1/AsciiPanel-ac179b1.jar!/asciiPanel/AsciiPanel.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="415" selection-start-line="415" selection-end-line="415" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/Tile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="242">
+              <caret line="21" column="91" selection-start-line="21" selection-start-column="91" selection-end-line="21" selection-end-column="91" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -129,8 +93,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/MainMenuScreenDrawer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Driver.java" />
         <option value="$PROJECT_DIR$/src/main/java/PlayScreenDrawer.java" />
         <option value="$PROJECT_DIR$/src/main/java/GameWrangler.java" />
         <option value="$PROJECT_DIR$/src/main/java/Action.java" />
@@ -156,14 +118,6 @@
         <option value="$PROJECT_DIR$/src/main/java/game/PlayScreen.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/parts/PartDoubleJointedLegs.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionGetBodyScreen.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveE.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveN.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveNE.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveNW.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveS.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveSE.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveSW.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveW.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/screens/BodyScreen.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/screens/MainMenuScreen.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/util/Line.java" />
@@ -175,11 +129,21 @@
         <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionToggleLookMode.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/grids/Map.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/Tile.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/grids/Grid.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/screens/PlayScreen.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/GameWrangler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/Driver.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/util/MapLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/screens/PlayScreen.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/util/MapFuncs.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/grids/Grid.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveE.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/grids/test.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/game/Driver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/GameWrangler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveN.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveNE.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveNW.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveSE.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveSW.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/actions/ActionMoveW.java" />
       </list>
     </option>
   </component>
@@ -203,7 +167,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -236,6 +199,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adsgame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adsgame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="adsgame" type="b2602c69:ProjectViewProjectNode" />
@@ -279,10 +251,11 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551845850609" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551879401752" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -344,7 +317,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26599148" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26865673" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -353,7 +326,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -531,76 +504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionMoveN.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionMoveNE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionMoveS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionMoveSE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionMoveSW.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionMoveW.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionMoveNW.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/util/Line.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
@@ -651,16 +554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionMoveE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionLMCycleRight.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -698,57 +591,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/grids/test.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/github/trystan/AsciiPanel/ac179b1/AsciiPanel-ac179b1.jar!/asciiPanel/AsciiPanel.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="415" selection-start-line="415" selection-end-line="415" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/grids/Grid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/screens/PlayScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/GameWrangler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="39" column="47" lean-forward="true" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -762,10 +608,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/util/MapLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/screens/PlayScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="72" column="1" lean-forward="true" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
+        <state relative-caret-position="256">
+          <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/util/MapFuncs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="65" column="9" lean-forward="true" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/grids/Grid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="21" column="91" selection-start-line="21" selection-start-column="91" selection-end-line="21" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/grids/test.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionMoveE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="61" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionMoveN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionMoveNW.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionMoveS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionMoveSE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionMoveNE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionMoveSW.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/GameWrangler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="36" column="69" lean-forward="true" selection-start-line="36" selection-start-column="69" selection-end-line="36" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/actions/ActionMoveW.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-public class MapLoader {
+public class MapFuncs {
 
     public static Set<Character> solidGlyphs = new HashSet<>();
 
@@ -58,14 +58,14 @@ public class MapLoader {
         Color background = Color.decode(element.getElementsByTagName("bkg").item(0).getFirstChild().getNodeValue());
         return new Tile(glyph, foreground, background, isWalkable(glyph));
     }
-    private static boolean isWalkable(char glyph){
+    public static boolean isWalkable(char glyph){
         if (solidGlyphs.contains(glyph)){
             return false;
         }else{
             return true;
         }
     }
-    private static void initializeSolidGlyphs(){
+    public static void initializeSolidGlyphs(){
         for (int ii = 179; ii < 224; ii++){
             solidGlyphs.add((char)ii);
         }
