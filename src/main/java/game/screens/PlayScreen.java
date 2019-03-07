@@ -2,6 +2,7 @@ package game.screens;
 
 import game.*;
 import game.actions.*;
+import game.behaviors.BehaviorFollow;
 import game.grids.Grid;
 import game.util.Line;
 import game.util.VisionFuncs;
@@ -54,6 +55,12 @@ public class PlayScreen extends Screen {
             wrangler.infoBar.write("LOOK MODE", 1, 3);
         }
         for (Entity entity : entities){
+            if (entity.behavior != null){
+                entity.behavior.act();
+                if (wrangler.tryMove(entity.behavior.nextPoint)){
+                    entity.setPosition(entity.behavior.nextPoint);
+                }
+            }
             entity.setDistanceFromPlayer(Line.getLine(entity.position, wrangler.player.position).size());
             System.out.println(entity.name + " dist: " + entity.distanceFromPlayer);
             if (playerVision.contains(entity.position)){
@@ -129,7 +136,11 @@ public class PlayScreen extends Screen {
 
     private void addTestEntities(){
         for (int ii = 0; ii < 10; ii++){
-            entities.add(new Entity("test"+ii, new Tile((char)(ii+48)),null, ii * 2, ii));
+            Entity tmp = new Entity("test" + ii, new Tile((char)(ii + 10)), null, ii * 3, ii * 2);
+            BehaviorFollow b = new BehaviorFollow(tmp);
+            b.setTarget(wrangler.player);
+            tmp.behavior = b;
+            entities.add(tmp);
         }
 
     }
