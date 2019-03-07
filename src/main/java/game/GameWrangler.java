@@ -19,6 +19,7 @@ import java.util.Set;
 
 public class GameWrangler {
     public final AsciiPanel tileGrid;
+    public final AsciiPanel infoBar;
 
     public Set<Screen> screens;
     public Screen currentScreen;
@@ -32,15 +33,16 @@ public class GameWrangler {
 
     public Entity player;
 
-    public GameWrangler(AsciiPanel tileGrid){
+    public GameWrangler(AsciiPanel tileGrid, AsciiPanel infoBar){
         this.tileGrid = tileGrid;
+        this.infoBar = infoBar;
         this.mapGrid = new Grid[Driver.MAP_WIDTH][Driver.MAP_HEIGHT];
         initializeMapGrid();
         currentMapGridIndex = new Point(0,0);
         currentMapGrid = getMapGrid(currentMapGridIndex);
         MapFuncs.load(new File("E:\\development\\adsgame\\src\\main\\java\\game\\grids\\testmap1.xml"), currentMapGrid);
 
-        player = new Entity("player", new Tile('@'), 4, 4);
+        player = new Entity("player", new Tile('@'), null, 4, 4);
         player.addPart(new PartDoubleJointedLegs(player));
         player.addPart(new PartHorn(player));
         player.addPart(new PartScales(player));
@@ -63,6 +65,7 @@ public class GameWrangler {
         return currentScreen;
     }
     public void setCurrentScreen(Screen screen){
+        Driver.mainFrame.removeKeyListener(currentScreen);
         currentScreen = screen;
         Driver.mainFrame.addKeyListener(screen);
         currentScreen.draw();

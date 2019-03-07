@@ -1,5 +1,6 @@
 package game;
 
+import game.behaviors.Behavior;
 import game.parts.Part;
 
 import java.awt.Point;
@@ -27,6 +28,9 @@ public class EntityFactory {
         for (Part part : parts){
             tempEntity.addPart(part);
         }
+    }
+    public void withBehavior(Behavior behavior){
+        tempEntity.behavior = behavior;
     }
     public Entity build(){
         return tempEntity;

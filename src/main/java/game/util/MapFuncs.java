@@ -56,7 +56,7 @@ public class MapFuncs {
         char glyph = (char)Integer.parseInt(element.getElementsByTagName("ascii").item(0).getFirstChild().getNodeValue());
         Color foreground = Color.decode(element.getElementsByTagName("fgd").item(0).getFirstChild().getNodeValue());
         Color background = Color.decode(element.getElementsByTagName("bkg").item(0).getFirstChild().getNodeValue());
-        return new Tile(glyph, foreground, background, isWalkable(glyph));
+        return new Tile(glyph, foreground, background, isWalkable(glyph), VisionFuncs.isSeeThrough(glyph));
     }
     public static boolean isWalkable(char glyph){
         if (solidGlyphs.contains(glyph)){

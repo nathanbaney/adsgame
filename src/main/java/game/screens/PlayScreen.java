@@ -4,6 +4,7 @@ import game.*;
 import game.actions.*;
 import game.grids.Grid;
 import game.util.Line;
+import game.util.VisionFuncs;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -16,6 +17,7 @@ public class PlayScreen extends Screen {
     private Map<Integer, Action> actionMapLM; //look mode
     public List<Entity> entities;
     public Set<Entity> highlightedEntities;
+    public Set<Point> playerVision;
 
     public Entity focusedEntity;
     public boolean lookMode;
@@ -29,6 +31,7 @@ public class PlayScreen extends Screen {
         actionMapLM = new HashMap<>();
         entities = new ArrayList<>();
         highlightedEntities = new HashSet<>();
+        playerVision = new HashSet<>();
 
         focusedEntity = wrangler.player;
         lookMode = false;
@@ -42,16 +45,20 @@ public class PlayScreen extends Screen {
     @Override
     public void draw(){
         wrangler.tileGrid.clear();
+        wrangler.infoBar.clear();
 
+        playerVision = VisionFuncs.getVision(wrangler.player.position, wrangler.currentMapGrid);
         drawGrid(wrangler.currentMapGrid);
 
         if (lookMode){
-            wrangler.tileGrid.write("LOOK MODE", 0, 0);
+            wrangler.infoBar.write("LOOK MODE", 1, 3);
         }
         for (Entity entity : entities){
             entity.setDistanceFromPlayer(Line.getLine(entity.position, wrangler.player.position).size());
             System.out.println(entity.name + " dist: " + entity.distanceFromPlayer);
-            entity.draw(wrangler.tileGrid);
+            if (playerVision.contains(entity.position)){
+                entity.draw(wrangler.tileGrid);
+            }
         }
         Collections.sort(entities, (Entity e1, Entity e2) -> {
             return e1.distanceFromPlayer - e2.distanceFromPlayer;
@@ -60,13 +67,19 @@ public class PlayScreen extends Screen {
             entity.highlight(wrangler.tileGrid, Color.YELLOW);
             highlightedEntities.remove(entity);
         }
+
         wrangler.tileGrid.repaint();
+        wrangler.infoBar.repaint();
     }
 
     public void drawGrid(Grid grid){
         for (int x = 0; x < Driver.GRID_WIDTH; x++){
             for (int y = 0; y < Driver.GRID_HEIGHT; y++){
-                grid.getTile(x, y).draw(wrangler.tileGrid, x, y);
+                if (playerVision.contains(new Point(x, y))){
+                    grid.getTile(x, y).draw(wrangler.tileGrid, x, y);
+                }else{
+                    grid.getTile(x, y).drawFOW(wrangler.tileGrid, x, y);
+                }
             }
         }
     }
@@ -79,7 +92,7 @@ public class PlayScreen extends Screen {
             }
         }else{
             if (actionMapLM.containsKey(e.getKeyCode())) {
-                actionMapLM.get(e.getKeyCode()).execute(this, wrangler.player);
+                actionMapLM.get(e.getKeyCode()).execute(this, focusedEntity);
             }
         }
     }
@@ -106,6 +119,8 @@ public class PlayScreen extends Screen {
         actionMapLM.put(KeyEvent.VK_NUMPAD4, new ActionLMCycleLeft());
         actionMapLM.put(KeyEvent.VK_ESCAPE, new ActionExit());
         actionMapLM.put(KeyEvent.VK_L, new ActionToggleLookMode());
+        actionMapLM.put(KeyEvent.VK_I, new ActionGetBodyScreen());
+
     }
 
     public void highlight(Entity entity){
@@ -114,7 +129,7 @@ public class PlayScreen extends Screen {
 
     private void addTestEntities(){
         for (int ii = 0; ii < 10; ii++){
-            entities.add(new Entity("test"+ii, new Tile((char)(ii+48)), ii * 2, ii));
+            entities.add(new Entity("test"+ii, new Tile((char)(ii+48)),null, ii * 2, ii));
         }
 
     }

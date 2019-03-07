@@ -1,6 +1,7 @@
 package game;
 
 import asciiPanel.AsciiPanel;
+import game.behaviors.Behavior;
 import game.parts.Part;
 import game.util.Line;
 
@@ -11,6 +12,7 @@ import java.util.List;
 public class Entity{
     public String name;
     public Tile tile;
+    public Behavior behavior;
 
     public Point position;
     public int xPos;
@@ -31,9 +33,10 @@ public class Entity{
 
     public int distanceFromPlayer;
 
-    public Entity(String name, Tile tile, int x, int y){
+    public Entity(String name, Tile tile, Behavior behavior, int x, int y){
         this.name = name;
         this.tile = tile;
+        this.behavior = behavior;
         xPos = x;
         yPos = y;
         position = new Point(x, y);
@@ -50,10 +53,10 @@ public class Entity{
         torsoSlots = 2;
         legSlots = 2;
 
-        distanceFromPlayer = 128; //arbitrarily high
+        distanceFromPlayer = 128;
     }
     public Entity(){
-        this("null", null, 0, 0);
+        this("null", null, null, 0, 0);
     }
 
     public void draw(AsciiPanel tileGrid){
