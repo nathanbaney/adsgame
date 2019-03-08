@@ -2,10 +2,13 @@ package game.behaviors;
 
 import game.Driver;
 import game.Entity;
+import game.GameWrangler;
 import game.util.Line;
+import game.util.VisionFuncs;
 
 import java.awt.*;
 import java.util.*;
+import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class BehaviorFollow extends Behavior {
@@ -18,23 +21,26 @@ public class BehaviorFollow extends Behavior {
 
     public BehaviorFollow(Entity entity){
         super(entity);
-        followDistance = 1;
+        followDistance = 2;
         stepQueue = new ArrayBlockingQueue<>(30);
         behaviorStep = 0;
     }
     @Override
     public void setTarget(Entity target){
         this.target = target;
-        stepQueue.addAll(Line.getLine(entity.position, target.position));
+        List<Point> path = VisionFuncs.shortestPath(entity.position, target.position, entity.grid);
+        stepQueue.addAll(path);
     }
     @Override
     public void act(){
-        if (stepQueue.peek() == null || behaviorStep > 5){
-            stepQueue.clear();
-            stepQueue.addAll(Line.getLine(entity.position, target.position));
-            behaviorStep = 0;
+        if (!stepQueue.isEmpty()){
+            if (GameWrangler.getInstance().tryMove(stepQueue.peek())){
+                entity.setPosition(stepQueue.poll());
+            }
+        }else{
+            System.out.println(target.xPos + " " + target.yPos);
+            stepQueue.addAll(VisionFuncs.shortestPath(entity.position, target.position, entity.grid));
         }
-        nextPoint = stepQueue.poll();
         behaviorStep++;
     }
 }

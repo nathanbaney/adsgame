@@ -11,7 +11,7 @@ public class ActionMoveE extends Action {
 
     @Override
     public void execute(Screen screen, Entity ent){
-        if (Driver.wrangler.tryMove(ent.xPos + 1, ent.yPos)){
+        if (GameWrangler.getInstance().tryMove(ent.xPos + 1, ent.yPos)){
             ent.xPos++;
             ent.position = new Point(ent.xPos, ent.yPos);
         }

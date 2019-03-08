@@ -1,6 +1,7 @@
 package game;
 
 import asciiPanel.AsciiPanel;
+import com.sun.org.glassfish.gmbal.GmbalException;
 import game.grids.Grid;
 import game.parts.PartDoubleJointedLegs;
 import game.parts.PartHorn;
@@ -11,6 +12,7 @@ import game.screens.MainMenuScreen;
 import game.screens.PlayScreen;
 import game.screens.Screen;
 import game.util.MapFuncs;
+import game.util.VisionFuncs;
 
 import java.awt.*;
 import java.io.File;
@@ -33,16 +35,27 @@ public class GameWrangler {
 
     public Entity player;
 
-    public GameWrangler(AsciiPanel tileGrid, AsciiPanel infoBar){
-        this.tileGrid = tileGrid;
-        this.infoBar = infoBar;
-        this.mapGrid = new Grid[Driver.MAP_WIDTH][Driver.MAP_HEIGHT];
+    private static GameWrangler INSTANCE = null;
+
+    public static synchronized GameWrangler getInstance() {
+        return INSTANCE;
+    }
+
+    public static synchronized GameWrangler getInstance(AsciiPanel tileGrid, AsciiPanel infoBar) {
+        if (INSTANCE == null) {
+            INSTANCE = new GameWrangler(tileGrid, infoBar);
+            INSTANCE.init();
+        }
+        return INSTANCE;
+    }
+
+    public void init() {
         initializeMapGrid();
         currentMapGridIndex = new Point(0,0);
         currentMapGrid = getMapGrid(currentMapGridIndex);
         MapFuncs.load(new File("E:\\development\\adsgame\\src\\main\\java\\game\\grids\\testmap1.xml"), currentMapGrid);
 
-        player = new Entity("player", new Tile('@'), null, 4, 4);
+        player = new Entity("player", new Tile('@'), null, 4, 4, currentMapGrid);
         player.addPart(new PartDoubleJointedLegs(player));
         player.addPart(new PartHorn(player));
         player.addPart(new PartScales(player));
@@ -59,6 +72,34 @@ public class GameWrangler {
         /////
 
         setCurrentScreen(playScreen);
+    }
+
+    private GameWrangler(AsciiPanel tileGrid, AsciiPanel infoBar){
+        this.tileGrid = tileGrid;
+        this.infoBar = infoBar;
+        this.mapGrid = new Grid[Driver.MAP_WIDTH][Driver.MAP_HEIGHT];
+//        initializeMapGrid();
+//        currentMapGridIndex = new Point(0,0);
+//        currentMapGrid = getMapGrid(currentMapGridIndex);
+//        MapFuncs.load(new File("E:\\development\\adsgame\\src\\main\\java\\game\\grids\\testmap1.xml"), currentMapGrid);
+//
+//        player = new Entity("player", new Tile('@'), null, 4, 4);
+//        player.addPart(new PartDoubleJointedLegs(player));
+//        player.addPart(new PartHorn(player));
+//        player.addPart(new PartScales(player));
+//        player.addPart(new PartSpines(player));
+//
+//        screens = new HashSet<>();
+//        mainMenuScreen = new MainMenuScreen(this);
+//        playScreen = new PlayScreen(this);
+//        bodyScreen = new BodyScreen(this);
+//        screens.add(mainMenuScreen);
+//        screens.add(playScreen);
+//        screens.add(bodyScreen);
+//
+//        /////
+//
+//        setCurrentScreen(playScreen);
     }
 
     public Screen getCurrentScreen(){

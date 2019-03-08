@@ -1,19 +1,19 @@
 package game.actions;
 
 import game.Entity;
+import game.GameWrangler;
 import game.screens.Screen;
-
-import static game.Driver.wrangler;
 
 public class ActionLMCycleLeft extends Action {
 
     @Override
     public void execute(Screen screen, Entity ent){
-        if (wrangler.playScreen.focusedEntityIndex > 0){
-            wrangler.playScreen.focusedEntityIndex--;
+        if (GameWrangler.getInstance().playScreen.focusedEntityIndex > 0){
+            GameWrangler.getInstance().playScreen.focusedEntityIndex--;
         }
-        wrangler.playScreen.focusedEntity = wrangler.playScreen.entities.get(wrangler.playScreen.focusedEntityIndex);
-        wrangler.playScreen.highlight(wrangler.playScreen.focusedEntity);
+        GameWrangler.getInstance().playScreen.focusedEntity = GameWrangler.getInstance()
+                .currentMapGrid.entities.get(GameWrangler.getInstance().playScreen.focusedEntityIndex);
+        GameWrangler.getInstance().playScreen.highlight(GameWrangler.getInstance().playScreen.focusedEntity);
         screen.draw();
     }
 }

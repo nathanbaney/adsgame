@@ -10,13 +10,11 @@ import game.util.VisionFuncs;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.*;
-import java.util.List;
 
 public class PlayScreen extends Screen {
     public Map<String, Tile> tiles;
     private Map<Integer, Action> actionMap;
     private Map<Integer, Action> actionMapLM; //look mode
-    public List<Entity> entities;
     public Set<Entity> highlightedEntities;
     public Set<Point> playerVision;
 
@@ -30,7 +28,6 @@ public class PlayScreen extends Screen {
         tiles = new HashMap<>();
         actionMap = new HashMap<>();
         actionMapLM = new HashMap<>();
-        entities = new ArrayList<>();
         highlightedEntities = new HashSet<>();
         playerVision = new HashSet<>();
 
@@ -38,40 +35,36 @@ public class PlayScreen extends Screen {
         lookMode = false;
         focusedEntityIndex = 0;
 
-        entities.add(wrangler.player);
-        addCommonTiles();
         addActions();
-        addTestEntities();
+        addTestEntity();
     }
     @Override
     public void draw(){
-        wrangler.tileGrid.clear();
-        wrangler.infoBar.clear();
+        GameWrangler.getInstance().tileGrid.clear();
+        GameWrangler.getInstance().infoBar.clear();
 
-        playerVision = VisionFuncs.getVision(wrangler.player.position, wrangler.currentMapGrid);
-        drawGrid(wrangler.currentMapGrid);
+        playerVision = VisionFuncs.getVision(GameWrangler.getInstance().player.position, GameWrangler.getInstance().currentMapGrid);
+        drawGrid(GameWrangler.getInstance().currentMapGrid);
 
         if (lookMode){
-            wrangler.infoBar.write("LOOK MODE", 1, 3);
+            GameWrangler.getInstance().infoBar.write("LOOK MODE", 1, 3);
         }
-        for (Entity entity : entities){
+        for (Entity entity : GameWrangler.getInstance().currentMapGrid.entities){
             if (entity.behavior != null){
                 entity.behavior.act();
-                if (wrangler.tryMove(entity.behavior.nextPoint)){
-                    entity.setPosition(entity.behavior.nextPoint);
-                }
             }
-            entity.setDistanceFromPlayer(Line.getLine(entity.position, wrangler.player.position).size());
+            entity.setDistanceFromPlayer(Line.getLine(entity.position, GameWrangler.getInstance().player.position).size());
             System.out.println(entity.name + " dist: " + entity.distanceFromPlayer);
             if (playerVision.contains(entity.position)){
-                entity.draw(wrangler.tileGrid);
+                entity.draw(GameWrangler.getInstance().tileGrid);
             }
         }
-        Collections.sort(entities, (Entity e1, Entity e2) -> {
+        GameWrangler.getInstance().player.draw(GameWrangler.getInstance().tileGrid);
+        Collections.sort(GameWrangler.getInstance().currentMapGrid.entities, (Entity e1, Entity e2) -> {
             return e1.distanceFromPlayer - e2.distanceFromPlayer;
         });
         for (Entity entity : highlightedEntities){
-            entity.highlight(wrangler.tileGrid, Color.YELLOW);
+            entity.highlight(GameWrangler.getInstance().tileGrid, Color.YELLOW);
             highlightedEntities.remove(entity);
         }
 
@@ -83,9 +76,9 @@ public class PlayScreen extends Screen {
         for (int x = 0; x < Driver.GRID_WIDTH; x++){
             for (int y = 0; y < Driver.GRID_HEIGHT; y++){
                 if (playerVision.contains(new Point(x, y))){
-                    grid.getTile(x, y).draw(wrangler.tileGrid, x, y);
+                    grid.getTile(x, y).draw(GameWrangler.getInstance().tileGrid, x, y);
                 }else{
-                    grid.getTile(x, y).drawFOW(wrangler.tileGrid, x, y);
+                    grid.getTile(x, y).drawFOW(GameWrangler.getInstance().tileGrid, x, y);
                 }
             }
         }
@@ -95,7 +88,7 @@ public class PlayScreen extends Screen {
     public void keyPressed(KeyEvent e) {
         if (!lookMode) {
             if (actionMap.containsKey(e.getKeyCode())) {
-                actionMap.get(e.getKeyCode()).execute(this, wrangler.player);
+                actionMap.get(e.getKeyCode()).execute(this, GameWrangler.getInstance().player);
             }
         }else{
             if (actionMapLM.containsKey(e.getKeyCode())) {
@@ -103,12 +96,6 @@ public class PlayScreen extends Screen {
             }
         }
     }
-
-    private void addCommonTiles(){
-        Tile background = new Tile('.');
-        tiles.put("background_tile", background);
-    }
-
     private void addActions(){
         actionMap.put(KeyEvent.VK_NUMPAD8, new ActionMoveN());
         actionMap.put(KeyEvent.VK_NUMPAD9, new ActionMoveNE());
@@ -129,19 +116,17 @@ public class PlayScreen extends Screen {
         actionMapLM.put(KeyEvent.VK_I, new ActionGetBodyScreen());
 
     }
-
     public void highlight(Entity entity){
         highlightedEntities.add(entity);
     }
-
-    private void addTestEntities(){
-        for (int ii = 0; ii < 10; ii++){
-            Entity tmp = new Entity("test" + ii, new Tile((char)(ii + 10)), null, ii * 3, ii * 2);
-            BehaviorFollow b = new BehaviorFollow(tmp);
-            b.setTarget(wrangler.player);
-            tmp.behavior = b;
-            entities.add(tmp);
-        }
-
+    public void addTestEntity(){
+        Entity test = new Entity(
+                "test",
+                new Tile('T'),
+                null,
+                30, 25, GameWrangler.getInstance().currentMapGrid);
+        test.behavior = new BehaviorFollow(test);
+        test.behavior.setTarget(GameWrangler.getInstance().player);
+        GameWrangler.getInstance().currentMapGrid.entities.add(test);
     }
 }

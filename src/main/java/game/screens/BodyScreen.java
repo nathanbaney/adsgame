@@ -56,24 +56,28 @@ public class BodyScreen extends Screen {
     }
     public void keyPressed(KeyEvent e) {
         if (actionMap.containsKey(e.getKeyCode())) {
-            if (e.getKeyCode() == KeyEvent.VK_NUMPAD1){
-                selectedSlot = 1;
-            }else if (e.getKeyCode() == KeyEvent.VK_NUMPAD2){
-                selectedSlot = 2;
-            }else if (e.getKeyCode() == KeyEvent.VK_NUMPAD3){
-                selectedSlot = 3;
-            }else if (e.getKeyCode() == KeyEvent.VK_NUMPAD4){
-                selectedSlot = 4;
-            }else if (e.getKeyCode() == KeyEvent.VK_NUMPAD5){
-                selectedSlot = 5;
-            }else if (e.getKeyCode() == KeyEvent.VK_NUMPAD6){
-                selectedSlot = 6;
-            }else if (e.getKeyCode() == KeyEvent.VK_NUMPAD7){
-                selectedSlot = 7;
-            }else if (e.getKeyCode() == KeyEvent.VK_NUMPAD8){
-                selectedSlot = 8;
-            }else if (e.getKeyCode() == KeyEvent.VK_NUMPAD9){
-                selectedSlot = 9;
+            if (currentEntity.equals(GameWrangler.getInstance().player)) {
+                if (e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
+                    selectedSlot = 1;
+                } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
+                    selectedSlot = 2;
+                } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
+                    selectedSlot = 3;
+                } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
+                    selectedSlot = 4;
+                } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
+                    selectedSlot = 5;
+                } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
+                    selectedSlot = 6;
+                } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
+                    selectedSlot = 7;
+                } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
+                    selectedSlot = 8;
+                } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
+                    selectedSlot = 9;
+                }
+            }else{
+                selectedSlot = 0;
             }
             actionMap.get(e.getKeyCode()).execute(this, currentEntity);
         }else {

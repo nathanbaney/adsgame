@@ -1,6 +1,7 @@
 package game;
 
 import game.behaviors.Behavior;
+import game.grids.Grid;
 import game.parts.Part;
 
 import java.awt.Point;
@@ -32,7 +33,13 @@ public class EntityFactory {
     public void withBehavior(Behavior behavior){
         tempEntity.behavior = behavior;
     }
+    public void withGrid(Grid grid){
+        tempEntity.grid  =grid;
+    }
     public Entity build(){
+        if (tempEntity.grid == null){
+            tempEntity.grid = GameWrangler.getInstance().currentMapGrid;
+        }
         return tempEntity;
     }
 }

@@ -2,6 +2,7 @@ package game;
 
 import asciiPanel.AsciiPanel;
 import game.behaviors.Behavior;
+import game.grids.Grid;
 import game.parts.Part;
 import game.util.Line;
 
@@ -17,6 +18,7 @@ public class Entity{
     public Point position;
     public int xPos;
     public int yPos;
+    public Grid grid;
 
     public int speed;
     public int health;
@@ -33,13 +35,14 @@ public class Entity{
 
     public int distanceFromPlayer;
 
-    public Entity(String name, Tile tile, Behavior behavior, int x, int y){
+    public Entity(String name, Tile tile, Behavior behavior, int x, int y, Grid grid){
         this.name = name;
         this.tile = tile;
         this.behavior = behavior;
         xPos = x;
         yPos = y;
         position = new Point(x, y);
+        this.grid = grid;
 
         speed = 1;
         health = 10;
@@ -56,7 +59,7 @@ public class Entity{
         distanceFromPlayer = 128;
     }
     public Entity(){
-        this("null", null, null, 0, 0);
+        this("null", null, null, 0, 0, GameWrangler.getInstance().currentMapGrid);
     }
 
     public void draw(AsciiPanel tileGrid){

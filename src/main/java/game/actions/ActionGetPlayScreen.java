@@ -1,13 +1,12 @@
 package game.actions;
 
 import game.Entity;
+import game.GameWrangler;
 import game.screens.Screen;
-
-import static game.Driver.wrangler;
 
 public class ActionGetPlayScreen extends Action {
     @Override
     public void execute(Screen screen, Entity ent) {
-        wrangler.setCurrentScreen(wrangler.playScreen);
+        GameWrangler.getInstance().setCurrentScreen(GameWrangler.getInstance().playScreen);
     }
 }
